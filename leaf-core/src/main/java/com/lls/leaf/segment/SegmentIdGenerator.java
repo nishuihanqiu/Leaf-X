@@ -176,7 +176,7 @@ public class SegmentIdGenerator implements IdGenerator {
             } else {
                 nextStep = nextStep / 2 >= buffer.getMinStep() ? nextStep / 2 : nextStep;
             }
-            logger.info("leafKey[{}], step[{}], duration[{}mins], nextStep[{}]", key, buffer.getStep(), String.format("%.2f", ((double) duration / (1000 * 60))), nextStep);
+            logger.info("leafKey[{}], step[{}], duration[{} min[s] ], nextStep[{}]", key, buffer.getStep(), String.format("%.2f", ((double) duration / (1000 * 60))), nextStep);
             LeafAlloc temp = new LeafAlloc();
             temp.setKey(key);
             temp.setStep(nextStep);
@@ -196,7 +196,6 @@ public class SegmentIdGenerator implements IdGenerator {
 
     public Result getIdFromSegmentBuffer(final SegmentBuffer buffer) {
         while (true) {
-
             try {
                 buffer.readLock().lock();
                 final Segment segment = buffer.getCurrent();
@@ -234,7 +233,7 @@ public class SegmentIdGenerator implements IdGenerator {
             } finally {
                 buffer.readLock().unlock();
             }
-
+            this.waitAndSleep(buffer);
 
             try {
                 buffer.writeLock().lock();

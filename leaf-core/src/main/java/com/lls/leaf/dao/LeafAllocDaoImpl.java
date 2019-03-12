@@ -52,7 +52,15 @@ public class LeafAllocDaoImpl implements LeafAllocDao {
     }
 
     public LeafAlloc updateMaxIdByCustomStepAndGetLeafAlloc(LeafAlloc leafAlloc) {
-        return null;
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        try {
+            sqlSession.update("com.lls.leaf.dao.LeafAllocMapper.updateMaxIdByCustomStep", leafAlloc);
+            LeafAlloc result = sqlSession.selectOne("com.lls.leaf.dao.LeafAllocMapper.getLeafAlloc", leafAlloc.getKey());
+            sqlSession.commit();
+            return result;
+        } finally {
+            sqlSession.close();
+        }
     }
 
     public List<String> getAllTags() {

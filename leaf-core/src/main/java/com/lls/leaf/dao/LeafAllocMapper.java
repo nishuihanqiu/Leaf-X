@@ -18,13 +18,13 @@ public interface LeafAllocMapper {
             @Result(column = "biz_tag", property = "key"),
             @Result(column = "max_id", property = "maxId"),
             @Result(column = "step", property = "step"),
-            @Result(column = "update_time", property = "updateTime")
+            @Result(column = "updated_time", property = "updatedTime")
     })
-    @Select("SELECT biz_tag, max_id, step, update_time FROM leaf_alloc")
+    @Select("SELECT biz_tag, max_id, step, updated_time FROM leaf_alloc")
     List<LeafAlloc> getAllLeafAllocs();
 
     @ResultMap(value = map)
-    @Select("SELECT biz_tag, max_id, step, update_time FROM leaf_alloc WHERE biz_tag = #{tag}")
+    @Select("SELECT biz_tag, max_id, step, updated_time FROM leaf_alloc WHERE biz_tag = #{tag}")
     LeafAlloc getLeafAlloc(@Param("tag") String tag);
 
     @Update("UPDATE leaf_alloc SET max_id = max_id + step WHERE biz_tag = #{tag}")

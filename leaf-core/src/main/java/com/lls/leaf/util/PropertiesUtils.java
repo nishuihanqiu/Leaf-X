@@ -18,7 +18,7 @@ public class PropertiesUtils {
 
     static {
         try {
-            properties.load(PropertiesUtils.class.getResourceAsStream("leaf_x.properties"));
+            properties.load(PropertiesUtils.class.getClassLoader().getResourceAsStream("leaf_x.properties"));
         } catch (IOException e) {
             logger.warn("load leaf_x.properties exception:" + e.getMessage(), e);
         }

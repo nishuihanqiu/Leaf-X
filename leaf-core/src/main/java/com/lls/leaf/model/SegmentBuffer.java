@@ -117,8 +117,7 @@ public class SegmentBuffer {
     @Override
     public String toString() {
         return "SegmentBuffer{" +
-                "key='" + key + '\'' +
-                ", segments=" + Arrays.toString(segments) +
+                "key='" + key +
                 ", currentIndex=" + currentIndex +
                 ", nextReady=" + nextReady +
                 ", initOk=" + initOk +

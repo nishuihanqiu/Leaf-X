@@ -12,7 +12,7 @@
 
     <modules>
         <module>leaf-core</module>
-        <module>leaf-server</module>
+        <module>leaf-rest</module>
     </modules>
     <description>Extended Distributed ID Generate Service</description>
 

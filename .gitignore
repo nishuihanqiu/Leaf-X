@@ -25,6 +25,6 @@ hs_err_pid*
 
 Leaf-X.iml
 leaf-core/leaf-core.iml
-leaf-server/leaf-server.iml
+leaf-rest/leaf-rest.iml
 leaf-core/target
-leaf-server/target
+leaf-rest/target

@@ -8,11 +8,12 @@
         <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>leaf-server</artifactId>
+    <artifactId>leaf-rest</artifactId>
     <packaging>jar</packaging>
     <version>0.0.1</version>
-    <name>leaf-server</name>
+    <name>leaf-rest</name>
     <description>LeafX HTTP Server</description>
+
     <properties>
         <spring-boot-dependencies.version>1.5.18.RELEASE</spring-boot-dependencies.version>
     </properties>
@@ -99,4 +100,6 @@
 
         </plugins>
     </build>
+
+
 </project>

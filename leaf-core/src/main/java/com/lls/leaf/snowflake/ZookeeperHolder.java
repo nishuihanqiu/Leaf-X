@@ -197,8 +197,7 @@ public class ZookeeperHolder {
 
     private Endpoint deBuildData(String json) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        Endpoint endpoint = mapper.readValue(json, Endpoint.class);
-        return endpoint;
+        return mapper.readValue(json, Endpoint.class);
     }
 
     static class Endpoint {
